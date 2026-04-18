@@ -53,18 +53,18 @@ export default function MenuItemCard({ item, index = 0 }: MenuItemCardProps) {
 
         {/* Veg/Non-veg indicator */}
         <div className="absolute top-2 right-2">
-          {item.isVeg !== undefined && (
+          {item.veg !== undefined && (
             <div
               className="w-5 h-5 rounded-sm flex items-center justify-center border-2"
               style={{
-                borderColor: item.isVeg ? "#16a34a" : "#dc2626",
+                borderColor: item.veg ? "#16a34a" : "#dc2626",
                 background: "white",
               }}
             >
               <div
                 className="w-2.5 h-2.5 rounded-full"
                 style={{
-                  background: item.isVeg ? "#16a34a" : "#dc2626",
+                  background: item.veg ? "#16a34a" : "#dc2626",
                 }}
               />
             </div>
@@ -122,7 +122,7 @@ export default function MenuItemCard({ item, index = 0 }: MenuItemCardProps) {
               fontWeight: 500,
             }}
           >
-            {item.isVeg ? "Veg" : item.isVeg === false ? "Non-veg" : ""}
+            {item.veg ? "Veg" : item.veg === false ? "Non-veg" : ""}
           </span>
         </div>
       </div>
