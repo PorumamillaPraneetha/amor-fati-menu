@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand-purple: #7C3AED;
+  --color-brand-purple-dark: #5B21B6;
+  --color-brand-purple-soft: #EDE9FE;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #FAF7F0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: contain;
+}
+
+/* Hide scrollbar but allow scroll */
+.no-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scroll-bar::-webkit-scrollbar { display: none; }
+
+/* Thin scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #E8DFF5; border-radius: 4px; }
+
+/* Press / tap effect */
+.press {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.press:active { transform: scale(0.96); }
+
+/* Menu card */
+.menu-card {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+@media (hover: hover) {
+  .menu-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(124,58,237,0.12);
   }
 }
+.menu-card:active {
+  transform: scale(0.98);
+}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Category pill */
+.cat-pill {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.cat-pill.inactive {
+  background: white;
+  color: #6B7280;
+  border: 1.5px solid #EAE3DA;
+}
+.cat-pill.inactive:hover {
+  border-color: #7C3AED;
+  color: #7C3AED;
+  background: #F5F0FF;
+}
+.cat-pill.active {
+  background: #7C3AED;
+  color: white;
+  box-shadow: 0 4px 14px rgba(124,58,237,0.30);
+}
+.cat-pill:active {
+  transform: scale(0.95);
+}
+
+/* Veg indicator box */
+.veg-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border-width: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.3s ease-out both; }
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #ede8e0 25%, #f7f2ea 50%, #ede8e0 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite ease-in-out;
+  border-radius: 10px;
+}
+
+/* Smooth image reveal */
+.img-reveal {
+  transition: opacity 0.3s ease;
 }

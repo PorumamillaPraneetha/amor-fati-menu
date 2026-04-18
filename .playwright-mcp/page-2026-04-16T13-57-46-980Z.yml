@@ -1,0 +1,59 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img "Amor Fati logo" [ref=e6]
+          - generic [ref=e7]:
+            - heading "Amor Fati" [level=1] [ref=e8]
+            - paragraph [ref=e9]: Coffee & Eatery · VV Mahal Rd, Tirupati
+          - generic [ref=e14]: Open
+        - generic [ref=e15]:
+          - generic:
+            - img
+          - searchbox "Search dishes, drinks…" [ref=e16]
+      - generic [ref=e18]:
+        - button "✨ All Items" [ref=e19] [cursor=pointer]:
+          - generic [ref=e20]: ✨
+          - generic [ref=e21]: All Items
+        - button "☕ Coffee & Co" [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: ☕
+          - generic [ref=e24]: Coffee & Co
+        - button "🍵 Matcha" [ref=e25] [cursor=pointer]:
+          - generic [ref=e26]: 🍵
+          - generic [ref=e27]: Matcha
+        - button "🍟 Fried Foods" [ref=e28] [cursor=pointer]:
+          - generic [ref=e29]: 🍟
+          - generic [ref=e30]: Fried Foods
+        - button "🍕 Pizza" [ref=e31] [cursor=pointer]:
+          - generic [ref=e32]: 🍕
+          - generic [ref=e33]: Pizza
+        - button "🍔 Burgers" [ref=e34] [cursor=pointer]:
+          - generic [ref=e35]: 🍔
+          - generic [ref=e36]: Burgers
+        - button "🔥 Smash Burgers" [ref=e37] [cursor=pointer]:
+          - generic [ref=e38]: 🔥
+          - generic [ref=e39]: Smash Burgers
+        - button "🌯 Wraps" [ref=e40] [cursor=pointer]:
+          - generic [ref=e41]: 🌯
+          - generic [ref=e42]: Wraps
+        - button "🥣 Bowls" [ref=e43] [cursor=pointer]:
+          - generic [ref=e44]: 🥣
+          - generic [ref=e45]: Bowls
+        - button "🥤 Shakes" [ref=e46] [cursor=pointer]:
+          - generic [ref=e47]: 🥤
+          - generic [ref=e48]: Shakes
+        - button "🍫 Brownie" [ref=e49] [cursor=pointer]:
+          - generic [ref=e50]: 🍫
+          - generic [ref=e51]: Brownie
+        - button "🧊 Coolers" [ref=e52] [cursor=pointer]:
+          - generic [ref=e53]: 🧊
+          - generic [ref=e54]: Coolers
+    - main [ref=e55]
+    - contentinfo [ref=e149]:
+      - img "Amor Fati logo" [ref=e150]
+      - paragraph [ref=e151]: Amor Fati Coffee & Eatery
+      - paragraph [ref=e152]: VV Mahal Rd, Tirupati
+      - paragraph [ref=e153]: Open 10AM – 10PM · @cafe.amorfati
+  - button "Open Next.js Dev Tools" [ref=e159] [cursor=pointer]:
+    - img [ref=e160]

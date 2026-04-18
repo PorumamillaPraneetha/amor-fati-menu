@@ -1,0 +1,75 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: AF
+        - generic [ref=e6]: Amor Fati
+      - link "View Menu" [ref=e7] [cursor=pointer]:
+        - /url: /menu
+    - generic [ref=e8]:
+      - generic [ref=e10]: AF
+      - paragraph [ref=e11]: Coffee & Eatery · Tirupati
+      - heading "Amor Fati" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Love what is. Sip what you love.
+      - paragraph [ref=e14]: A café where every sip tells a story. From craft matcha to smash burgers — made with love, served with soul.
+      - generic [ref=e15]:
+        - link "Browse Menu" [ref=e16] [cursor=pointer]:
+          - /url: /menu
+        - link "Our Story" [ref=e17] [cursor=pointer]:
+          - /url: "#about"
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]: 📍
+          - text: 9/V Mahal Rd, Tirupati
+        - generic [ref=e21]:
+          - generic [ref=e22]: 🕐
+          - text: 2PM – 10PM
+        - generic [ref=e23]:
+          - generic [ref=e24]: 📸
+          - text: "@cafe.amorfati"
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e28]: ☕
+        - generic [ref=e29]: Premium Coffee
+      - generic [ref=e30]:
+        - generic [ref=e31]: 🍵
+        - generic [ref=e32]: Signature Matcha
+      - generic [ref=e33]:
+        - generic [ref=e34]: 🍕
+        - generic [ref=e35]: Artisan Pizza
+      - generic [ref=e36]:
+        - generic [ref=e37]: 🍔
+        - generic [ref=e38]: Smash Burgers
+      - generic [ref=e39]:
+        - generic [ref=e40]: 🍫
+        - generic [ref=e41]: Fudgy Brownies
+      - generic [ref=e42]:
+        - generic [ref=e43]: 🥤
+        - generic [ref=e44]: Thick Shakes
+    - generic [ref=e46]:
+      - heading "At the Café" [level=2] [ref=e48]
+      - generic [ref=e50]:
+        - img "Coffee art" [ref=e52]
+        - img "Matcha latte" [ref=e54]
+        - img "Burger" [ref=e56]
+        - img "Brownie" [ref=e58]
+        - img "Pizza" [ref=e60]
+        - img "Milkshake" [ref=e62]
+    - generic [ref=e63]:
+      - paragraph [ref=e64]: Our Philosophy
+      - heading "\"Amor Fati\"" [level=2] [ref=e65]
+      - paragraph [ref=e66]:
+        - text: Latin for
+        - emphasis [ref=e67]: "\"love of fate\""
+        - text: — embrace every moment, every flavour, every sip. We believe great food and coffee can turn an ordinary day into something beautiful.
+      - link "Explore the Menu →" [ref=e68] [cursor=pointer]:
+        - /url: /menu
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]: AF
+        - generic [ref=e72]: Amor Fati
+      - paragraph [ref=e73]: Coffee & Eatery · 9/V Mahal Rd, Tirupati · 2PM–10PM
+      - paragraph [ref=e74]: Made with ♥ for every guest
+  - button "Open Next.js Dev Tools" [ref=e80] [cursor=pointer]:
+    - img [ref=e81]
+  - alert [ref=e84]
