@@ -86,26 +86,6 @@ export default function MenuItemCard({ item, index = 0 }: MenuItemCardProps) {
         >
           {item.description}
         </p>
-
-        {/* Addons */}
-        {item.addons && item.addons.length > 0 && (
-          <div className="mb-2.5 flex flex-wrap gap-1">
-            {item.addons.map((addon) => (
-              <span
-                key={addon.label}
-                className="text-xs px-2 py-0.5 rounded-full"
-                style={{
-                  background: "#F3F0FF",
-                  color: "var(--purple)",
-                  border: "1px solid #DDD6FE",
-                }}
-              >
-                +{addon.label} ₹{addon.price}
-              </span>
-            ))}
-          </div>
-        )}
-
         {/* Price */}
         <div className="flex items-center justify-between mt-auto">
           <span
