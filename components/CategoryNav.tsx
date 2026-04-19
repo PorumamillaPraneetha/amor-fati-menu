@@ -22,7 +22,7 @@ export default function CategoryNav({ active, onChange }: CategoryNavProps) {
     const containerWidth = container.offsetWidth;
     const scrollLeft = Math.max(0, btnLeft - containerWidth / 2 + btnWidth / 2);
 
-    container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+    container.scrollTo({ left: scrollLeft, behavior: "auto" });
   }, [active]);
 
   return (

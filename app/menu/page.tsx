@@ -83,12 +83,14 @@ export default function MenuPage() {
       ? "All Items"
       : categories.find((c) => c.id === activeCategory)?.name ?? "Menu";
 
-  /* ── Category click: switch to filtered view from top ──────────── */
+  /* ── Category click ─────────────────────────────────────────────── */
   const handleCatChange = useCallback((id: string) => {
     setSearch("");
     setActiveCategory(id);
     setScrollCategory(id);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (id === "all") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }, []);
 
   /* ── Intersection observer: highlight pill on scroll (All view) ─── */
@@ -233,7 +235,7 @@ export default function MenuPage() {
 
         {/* ── Grouped view (All + no search) ────────────────────── */}
         {ready && grouped && (
-          <div className="space-y-8 fade-up">
+          <div className="space-y-8">
 
             {/* ── Combo offer banners — shown first ─────────────── */}
             <div className="space-y-3">
@@ -308,7 +310,7 @@ export default function MenuPage() {
 
         {/* ── Filtered category or search results ───────────────── */}
         {ready && !grouped && filtered.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 fade-up">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {filtered.map((item) => (
               <MenuCard key={item.id} item={item} />
             ))}
