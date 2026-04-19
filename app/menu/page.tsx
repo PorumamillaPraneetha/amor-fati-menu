@@ -38,7 +38,6 @@ function SearchIcon() {
 /* ── Main page ──────────────────────────────────────────────────────── */
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [scrollCategory, setScrollCategory] = useState("all");
   const [search, setSearch] = useState("");
   const [ready, setReady] = useState(false);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -87,35 +86,10 @@ export default function MenuPage() {
   const handleCatChange = useCallback((id: string) => {
     setSearch("");
     setActiveCategory(id);
-    setScrollCategory(id);
-    if (id === "all") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (id !== "all") {
+      window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
     }
   }, []);
-
-  /* ── Intersection observer: highlight pill on scroll (All view) ─── */
-  useEffect(() => {
-    if (!grouped) return;
-
-    const headerHeight = headerRef.current?.offsetHeight ?? 120;
-    const observers: IntersectionObserver[] = [];
-
-    categories.slice(1).forEach((cat) => {
-      const el = sectionRefs.current[cat.id];
-      if (!el) return;
-
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setScrollCategory(cat.id);
-        },
-        { rootMargin: `-${headerHeight + 16}px 0px -60% 0px`, threshold: 0 }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
-
-    return () => observers.forEach((o) => o.disconnect());
-  }, [grouped]);
 
   /* ── Skeleton grid ──────────────────────────────────────────────── */
   const SkeletonGrid = ({ count = 6 }: { count?: number }) => (
@@ -195,7 +169,7 @@ export default function MenuPage() {
 
         {/* Category nav */}
         <div className="border-t border-stone-100 max-w-3xl mx-auto">
-          <CategoryNav active={activeCategory === "all" ? scrollCategory : activeCategory} onChange={handleCatChange} />
+          <CategoryNav active={activeCategory} onChange={handleCatChange} />
         </div>
       </header>
 
