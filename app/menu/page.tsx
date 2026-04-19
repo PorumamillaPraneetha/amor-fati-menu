@@ -38,6 +38,7 @@ function SearchIcon() {
 /* ── Main page ──────────────────────────────────────────────────────── */
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [scrollCategory, setScrollCategory] = useState("all");
   const [search, setSearch] = useState("");
   const [ready, setReady] = useState(false);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -82,14 +83,15 @@ export default function MenuPage() {
       ? "All Items"
       : categories.find((c) => c.id === activeCategory)?.name ?? "Menu";
 
-  /* ── Category click: always switch to filtered view from top ───── */
+  /* ── Category click: switch to filtered view from top ──────────── */
   const handleCatChange = useCallback((id: string) => {
     setSearch("");
     setActiveCategory(id);
+    setScrollCategory(id);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  /* ── Intersection observer: update active pill on scroll ────────── */
+  /* ── Intersection observer: highlight pill on scroll (All view) ─── */
   useEffect(() => {
     if (!grouped) return;
 
@@ -102,7 +104,7 @@ export default function MenuPage() {
 
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActiveCategory(cat.id);
+          if (entry.isIntersecting) setScrollCategory(cat.id);
         },
         { rootMargin: `-${headerHeight + 16}px 0px -60% 0px`, threshold: 0 }
       );
@@ -191,7 +193,7 @@ export default function MenuPage() {
 
         {/* Category nav */}
         <div className="border-t border-stone-100 max-w-3xl mx-auto">
-          <CategoryNav active={activeCategory} onChange={handleCatChange} />
+          <CategoryNav active={activeCategory === "all" ? scrollCategory : activeCategory} onChange={handleCatChange} />
         </div>
       </header>
 
