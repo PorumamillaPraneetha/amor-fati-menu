@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import CategoryNav from "@/components/CategoryNav";
 import MenuCard from "@/components/MenuCard";
+import CigaretteEspressoPopup from "@/components/CigaretteEspressoPopup";
 import { menuItems, categories, comboOffers } from "@/lib/menuData";
 
 /* ── Skeleton card ──────────────────────────────────────────────────── */
@@ -100,6 +101,7 @@ export default function MenuPage() {
 
   return (
     <div className="min-h-screen" style={{ background: "#FAF7F0" }}>
+      <CigaretteEspressoPopup />
 
       {/* ── Sticky header ─────────────────────────────────────────── */}
       <header

@@ -45,7 +45,7 @@ export default function MenuCard({ item }: { item: MenuItem }) {
       style={{ boxShadow: "0 2px 10px rgba(28,25,23,0.07)" }}
     >
       {/* ── Image ─────────────────────────────────────────── */}
-      <div className="relative w-full overflow-hidden" style={{ paddingBottom: (item.category === 'coolers' || item.category === 'choco-dips') ? "110%" : "65%" }}>
+      <div className="relative w-full overflow-hidden" style={{ paddingBottom: item.category === 'coolers' || item.category === 'choco-dips' ? "110%" : "65%" }}>
         <div className="absolute inset-0">
 
           {/* Skeleton shown until image loads */}
@@ -69,9 +69,9 @@ export default function MenuCard({ item }: { item: MenuItem }) {
               className="absolute inset-0 w-full h-full object-cover img-reveal"
               style={{
                 opacity: loaded ? 1 : 0,
-                objectFit: (item.category === 'coolers' || item.category === 'choco-dips') ? 'contain' : 'cover',
+                objectFit: (item.category === 'coolers' && item.id !== 'cl-05') || item.category === 'choco-dips' ? 'contain' : 'cover',
                 objectPosition: item.category === 'shakes' ? 'top' : 'center',
-                background: (item.category === 'coolers' || item.category === 'choco-dips') ? '#EDE8E0' : 'transparent',
+                background: (item.category === 'coolers' && item.id !== 'cl-05') || item.category === 'choco-dips' ? '#EDE8E0' : 'transparent',
               }}
               loading="lazy"
               decoding="async"

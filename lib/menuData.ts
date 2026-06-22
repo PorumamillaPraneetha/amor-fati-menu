@@ -59,6 +59,11 @@ const allMenuItems: MenuItem[] = [
 
   // ─── COFFEE & CO ───────────────────────────────────────────────────
   {
+    id: 'cf-00', category: 'coffee', name: 'Cigarette Espresso', price: 179, veg: true, mustTry: false,
+    description: 'A bold, intense espresso shot served with a smoky finish — our most striking coffee experience.',
+    image: '/coffee/cigarette-espresso.png'
+  },
+  {
     id: 'cf-01', category: 'coffee', name: 'Coffee', price: 59, veg: true, mustTry: true,
     description: 'Our signature house coffee — smooth, aromatic, freshly brewed.',
     image: '/coffee/coffee.png'
@@ -335,6 +340,11 @@ const allMenuItems: MenuItem[] = [
     description: 'Crispy fries and chicken wrapped up — a flavour explosion.',
     image: '/wraps/french-fries-wrap.png'
   },
+  {
+    id: 'wr-06', category: 'wraps', name: 'Chicken Keema Wrap', price: 199, veg: false, mustTry: false,
+    description: 'Spiced minced chicken keema wrapped in a soft tortilla — bold, hearty and deeply satisfying.',
+    image: '/wraps/chicken-kheema-wrap.png'
+  },
 
   // ─── BOWLS ─────────────────────────────────────────────────────────
   {
@@ -469,6 +479,11 @@ const allMenuItems: MenuItem[] = [
     id: 'cl-04', category: 'coolers', name: 'Mint Cooler', price: 99, veg: true, mustTry: false,
     description: 'Fresh mint, lime and soda — hits the spot every time.',
     image: '/coolers/mint-cooler.png'
+  },
+  {
+    id: 'cl-05', category: 'coolers', name: 'Spicy Guava Cooler', price: 139, veg: true, mustTry: true,
+    description: 'Bold guava flavour with a fiery desi kick — tangy, spicy and unapologetically ours.',
+    image: '/coolers/spicy-guava-cooler.png'
   },
 ];
 
