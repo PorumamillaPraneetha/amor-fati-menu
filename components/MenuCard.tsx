@@ -33,19 +33,21 @@ const CATEGORY_GRADIENT: Record<string, string> = {
   coolers: "from-cyan-50 to-blue-100",
 };
 
-export default function MenuCard({ item }: { item: MenuItem }) {
+export default function MenuCard({ item, forceStandard = false, soldOut = false }: { item: MenuItem; forceStandard?: boolean; soldOut?: boolean }) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
 
   const fallbackEmoji = CATEGORY_FALLBACKS[item.category] ?? "🍽️";
   const fallbackGradient = CATEGORY_GRADIENT[item.category] ?? "from-stone-50 to-stone-100";
 
+  const isTall = !forceStandard && (item.category === 'coolers' || item.category === 'choco-dips');
+
   return (
     <div className="menu-card bg-white rounded-2xl overflow-hidden border border-stone-100 flex flex-col"
-      style={{ boxShadow: "0 2px 10px rgba(28,25,23,0.07)" }}
+      style={{ boxShadow: "0 2px 10px rgba(28,25,23,0.07)", opacity: soldOut ? 0.75 : 1 }}
     >
       {/* ── Image ─────────────────────────────────────────── */}
-      <div className="relative w-full overflow-hidden" style={{ paddingBottom: item.category === 'coolers' || item.category === 'choco-dips' ? "110%" : "65%" }}>
+      <div className="relative w-full overflow-hidden" style={{ paddingBottom: isTall ? "110%" : "65%" }}>
         <div className="absolute inset-0">
 
           {/* Skeleton shown until image loads */}
@@ -69,9 +71,9 @@ export default function MenuCard({ item }: { item: MenuItem }) {
               className="absolute inset-0 w-full h-full object-cover img-reveal"
               style={{
                 opacity: loaded ? 1 : 0,
-                objectFit: (item.category === 'coolers' && item.id !== 'cl-05') || item.category === 'choco-dips' ? 'contain' : 'cover',
+                objectFit: isTall && item.id !== 'cl-05' ? 'contain' : 'cover',
                 objectPosition: item.category === 'shakes' ? 'top' : 'center',
-                background: (item.category === 'coolers' && item.id !== 'cl-05') || item.category === 'choco-dips' ? '#EDE8E0' : 'transparent',
+                background: isTall && item.id !== 'cl-05' ? '#EDE8E0' : 'transparent',
               }}
               loading="lazy"
               decoding="async"
@@ -80,6 +82,16 @@ export default function MenuCard({ item }: { item: MenuItem }) {
             />
           )}
         </div>
+
+        {/* Sold Out overlay */}
+        {soldOut && (
+          <div className="absolute inset-0 z-20 flex items-center justify-center"
+            style={{ background: "rgba(0,0,0,0.45)" }}>
+            <span className="bg-red-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
+              Sold Out
+            </span>
+          </div>
+        )}
 
         {/* Veg / Non-veg indicator */}
         <div className="absolute top-2 left-2 z-10">

@@ -3,7 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function CigaretteEspressoPopup() {
+interface Props {
+  onTryNow: () => void;
+}
+
+export default function CigaretteEspressoPopup({ onTryNow }: Props) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -13,15 +17,9 @@ export default function CigaretteEspressoPopup() {
 
   const close = () => setOpen(false);
 
-  const handleTryItNow = () => {
+  const handleTryNow = () => {
     close();
-    setTimeout(() => {
-      const el = document.getElementById("cat-coffee");
-      if (el) {
-        const y = el.getBoundingClientRect().top + window.scrollY - 160;
-        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
-      }
-    }, 300);
+    setTimeout(() => onTryNow(), 300);
   };
 
   return (
@@ -63,24 +61,24 @@ export default function CigaretteEspressoPopup() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/coffee/cigarette-espresso-popup.png"
-                alt="Cigarette Espresso"
+                alt="Just Dropped"
                 className="absolute inset-0 w-full h-full"
                 style={{ objectFit: "contain", objectPosition: "center center", transform: "scale(1.45)", transformOrigin: "center center" }}
               />
-              {/* Bottom fade into card bg */}
+              {/* Bottom fade */}
               <div
                 className="absolute inset-0"
                 style={{ background: "linear-gradient(to bottom, transparent 45%, #0E0E0E 100%)" }}
               />
 
-              {/* NEW DROP pill */}
+              {/* Badge */}
               <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full"
                 style={{ background: "rgba(124,58,237,0.92)", backdropFilter: "blur(6px)" }}>
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-200 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
                 </span>
-                <span className="text-white text-[10px] font-black uppercase tracking-[0.18em]">New Drop</span>
+                <span className="text-white text-[10px] font-black uppercase tracking-[0.18em]">Just Dropped</span>
               </div>
             </div>
 
@@ -90,49 +88,39 @@ export default function CigaretteEspressoPopup() {
                 className="text-[9px] font-black uppercase tracking-[0.22em] mb-2"
                 style={{ color: "#A78BFA" }}
               >
-                Bold · Fizzy · Addictive
+                New · Bold · Limited
               </p>
 
               <h2
                 className="text-white leading-none mb-3"
                 style={{
                   fontFamily: "Georgia, 'Times New Roman', serif",
-                  fontSize: "2.6rem",
+                  fontSize: "2.4rem",
                   fontWeight: 900,
                   letterSpacing: "-0.02em",
                   lineHeight: 0.95,
                 }}
               >
-                Cigarette<br />
-                <span style={{ fontStyle: "italic", color: "#C4B5FD" }}>Espresso</span>
+                Something new<br />
+                <span style={{ fontStyle: "italic", color: "#C4B5FD" }}>just dropped.</span>
               </h2>
 
               <p className="text-[14px] leading-snug mb-5 font-semibold" style={{ color: "#E5E7EB" }}>
-                Diet Coke, Condensed Milk, Espresso Shot.
+                The menu just got an upgrade.<br />
+                <span style={{ color: "#6B7280", fontWeight: 400 }}>You're welcome.</span>
               </p>
 
-              {/* Price + CTA */}
-              <div className="flex items-center gap-4">
-                <div>
-                  <p className="text-[9px] uppercase tracking-widest font-semibold" style={{ color: "#4B5563" }}>only at</p>
-                  <p
-                    className="text-white font-black text-3xl leading-none"
-                    style={{ fontFamily: "Georgia, serif" }}
-                  >
-                    ₹179
-                  </p>
-                </div>
-                <button
-                  onClick={handleTryItNow}
-                  className="flex-1 py-3.5 rounded-2xl text-white font-bold text-sm transition-all hover:opacity-90 active:scale-95"
-                  style={{
-                    background: "linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)",
-                    boxShadow: "0 8px 28px rgba(124,58,237,0.45)",
-                  }}
-                >
-                  Try It Now →
-                </button>
-              </div>
+              {/* CTA */}
+              <button
+                onClick={handleTryNow}
+                className="w-full py-3.5 rounded-2xl text-white font-bold text-sm transition-all hover:opacity-90 active:scale-95"
+                style={{
+                  background: "linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)",
+                  boxShadow: "0 8px 28px rgba(124,58,237,0.45)",
+                }}
+              >
+                See What&apos;s New →
+              </button>
             </div>
           </motion.div>
         </motion.div>

@@ -4,7 +4,8 @@ import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import CategoryNav from "@/components/CategoryNav";
 import MenuCard from "@/components/MenuCard";
 import CigaretteEspressoPopup from "@/components/CigaretteEspressoPopup";
-import { menuItems, categories, comboOffers } from "@/lib/menuData";
+import { menuItems, categories, comboOffers, newItemIds } from "@/lib/menuData";
+import { supabase } from "@/lib/supabase";
 
 /* ── Skeleton card ──────────────────────────────────────────────────── */
 function SkeletonCard() {
@@ -41,6 +42,7 @@ export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [search, setSearch] = useState("");
   const [ready, setReady] = useState(false);
+  const [soldOutIds, setSoldOutIds] = useState<Set<string>>(new Set());
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
   const headerRef = useRef<HTMLElement | null>(null);
 
@@ -50,10 +52,25 @@ export default function MenuPage() {
     return () => clearTimeout(t);
   }, []);
 
+  /* Sold-out real-time sync */
+  useEffect(() => {
+    const fetchSoldOut = () =>
+      supabase.from("sold_out").select("item_id").then(({ data }) => {
+        if (data) setSoldOutIds(new Set(data.map((r: { item_id: string }) => r.item_id)));
+      });
+    fetchSoldOut();
+    const channel = supabase
+      .channel("sold_out_changes")
+      .on("postgres_changes", { event: "*", schema: "public", table: "sold_out" }, fetchSoldOut)
+      .subscribe();
+    return () => { supabase.removeChannel(channel); };
+  }, []);
+
   /* ── Filtering ──────────────────────────────────────────────────── */
   const filtered = useMemo(() => {
     let list = menuItems;
-    if (activeCategory !== "all") list = list.filter((i) => i.category === activeCategory);
+    if (activeCategory === "just-dropped") list = list.filter((i) => newItemIds.has(i.id));
+    else if (activeCategory !== "all") list = list.filter((i) => i.category === activeCategory);
     if (search.trim()) {
       const q = search.toLowerCase();
       list = list.filter(
@@ -101,7 +118,10 @@ export default function MenuPage() {
 
   return (
     <div className="min-h-screen" style={{ background: "#FAF7F0" }}>
-      <CigaretteEspressoPopup />
+      <CigaretteEspressoPopup onTryNow={() => {
+        setActiveCategory("just-dropped");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }} />
 
       {/* ── Sticky header ─────────────────────────────────────────── */}
       <header
@@ -276,7 +296,7 @@ export default function MenuPage() {
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {group.items.map((item) => (
-                    <MenuCard key={item.id} item={item} />
+                    <MenuCard key={item.id} item={item} soldOut={soldOutIds.has(item.id)} />
                   ))}
                 </div>
               </section>
@@ -288,7 +308,7 @@ export default function MenuPage() {
         {ready && !grouped && filtered.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {filtered.map((item) => (
-              <MenuCard key={item.id} item={item} />
+              <MenuCard key={item.id} item={item} forceStandard={activeCategory === "just-dropped"} soldOut={soldOutIds.has(item.id)} />
             ))}
           </div>
         )}

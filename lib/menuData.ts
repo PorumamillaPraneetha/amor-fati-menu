@@ -5,6 +5,7 @@ const HIDDEN_CATEGORIES = ['french-toasts'];
 
 const allCategories: Category[] = [
   { id: 'all', name: 'All Items', emoji: '✨' },
+  { id: 'just-dropped', name: 'Just Dropped', emoji: '🔥' },
   { id: 'french-toasts', name: 'French Toasts', emoji: '🍞' },
   { id: 'coffee', name: 'Coffee & Co', emoji: '☕' },
   { id: 'matcha', name: 'Matcha', emoji: '🍵' },
@@ -501,3 +502,6 @@ export const comboOffers = [
 ];
 
 export const menuItems = allMenuItems.filter(i => !HIDDEN_CATEGORIES.includes(i.category));
+
+// IDs of newly added items — shown in the "Just Dropped" category
+export const newItemIds = new Set(['cf-00', 'cl-05', 'wr-06']);
