@@ -164,11 +164,6 @@ const allMenuItems: MenuItem[] = [
 
   // ─── FRIED FOODS ───────────────────────────────────────────────────
   {
-    id: 'ff-01', category: 'fried', name: 'Veg Fingers', price: 89, veg: true, mustTry: false,
-    description: 'Crispy golden vegetable fingers, lightly spiced and perfectly fried.',
-    image: '/fried/veg-fingers.png'
-  },
-  {
     id: 'ff-02', category: 'fried', name: 'Chilli Garlic Balls', price: 89, veg: true, mustTry: false,
     description: 'Spicy, garlicky balls fried to golden perfection.',
     image: '/fried/chilli-garlic-balls.png'
