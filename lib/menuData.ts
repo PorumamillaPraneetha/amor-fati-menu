@@ -65,7 +65,7 @@ const allMenuItems: MenuItem[] = [
     image: '/coffee/cigarette-espresso.png'
   },
   {
-    id: 'cf-13', category: 'coffee', name: 'Affogato', price: 189, veg: true, mustTry: false,
+    id: 'cf-13', category: 'coffee', name: 'Affogato', price: 199, veg: true, mustTry: false,
     description: 'A shot of bold espresso poured over velvety vanilla ice cream — hot meets cold in the most indulgent way.',
     image: '/coffee/affogato.png'
   },
