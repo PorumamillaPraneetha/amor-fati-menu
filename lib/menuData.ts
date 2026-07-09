@@ -65,6 +65,11 @@ const allMenuItems: MenuItem[] = [
     image: '/coffee/cigarette-espresso.png'
   },
   {
+    id: 'cf-13', category: 'coffee', name: 'Affogato', price: 189, veg: true, mustTry: false,
+    description: 'A shot of bold espresso poured over velvety vanilla ice cream — hot meets cold in the most indulgent way.',
+    image: '/coffee/affogato.png'
+  },
+  {
     id: 'cf-01', category: 'coffee', name: 'Coffee', price: 59, veg: true, mustTry: true,
     description: 'Our signature house coffee — smooth, aromatic, freshly brewed.',
     image: '/coffee/coffee.png'
@@ -499,4 +504,4 @@ export const comboOffers = [
 export const menuItems = allMenuItems.filter(i => !HIDDEN_CATEGORIES.includes(i.category));
 
 // IDs of newly added items — shown in the "Just Dropped" category
-export const newItemIds = new Set(['cf-00', 'cl-05', 'wr-06']);
+export const newItemIds = new Set(['cf-00', 'cl-05', 'wr-06', 'cf-13']);
