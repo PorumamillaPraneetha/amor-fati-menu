@@ -31,7 +31,7 @@ export default function CigaretteEspressoPopup({ onTryNow }: Props) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
           style={{ background: "rgba(5,5,5,0.88)", backdropFilter: "blur(8px)" }}
         >
           {/* Backdrop click to close */}

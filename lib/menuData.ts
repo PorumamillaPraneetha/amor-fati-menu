@@ -418,6 +418,11 @@ const allMenuItems: MenuItem[] = [
 
   // ─── BROWNIE ───────────────────────────────────────────────────────
   {
+    id: 'br-00', category: 'brownie', name: 'Brownie Puddle', price: 149, veg: true, mustTry: false,
+    description: 'A tempting fudgy brownie drenched in our specially made chocolate sauce — warm, gooey and utterly irresistible.',
+    image: '/brownie/brownie_puddle.png'
+  },
+  {
     id: 'br-01', category: 'brownie', name: 'Plain Brownie', price: 79, veg: true, mustTry: false,
     description: 'Classic fudgy chocolate brownie — simple, indulgent and perfect.',
     image: '/brownie/plain-brownie.png'
@@ -504,4 +509,4 @@ export const comboOffers = [
 export const menuItems = allMenuItems.filter(i => !HIDDEN_CATEGORIES.includes(i.category));
 
 // IDs of newly added items — shown in the "Just Dropped" category
-export const newItemIds = new Set(['cf-00', 'cl-05', 'wr-06', 'cf-13']);
+export const newItemIds = new Set(['br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
