@@ -11,7 +11,7 @@ export default function CigaretteEspressoPopup({ onTryNow }: Props) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setOpen(true), 700);
+    const t = setTimeout(() => setOpen(true), 300);
     return () => clearTimeout(t);
   }, []);
 
@@ -32,17 +32,17 @@ export default function CigaretteEspressoPopup({ onTryNow }: Props) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
           className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
-          style={{ background: "rgba(5,5,5,0.88)", backdropFilter: "blur(8px)" }}
+          style={{ background: "rgba(5,5,5,0.88)" }}
         >
           {/* Backdrop click to close */}
           <div className="absolute inset-0" onClick={close} />
 
           {/* Card */}
           <motion.div
-            initial={{ scale: 0.78, opacity: 0, y: 60 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.88, opacity: 0, y: 40 }}
-            transition={{ type: "spring", damping: 22, stiffness: 260, delay: 0.05 }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
             className="relative w-full max-w-sm rounded-3xl overflow-hidden z-10"
             style={{ background: "#0E0E0E", boxShadow: "0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(124,58,237,0.2)" }}
           >
