@@ -15,7 +15,7 @@ const allCategories: Category[] = [
   { id: 'wraps', name: 'Wraps', emoji: '🌯' },
   { id: 'bowls', name: 'Bowls', emoji: '🥣' },
   { id: 'shakes', name: 'Shakes', emoji: '🥤' },
-  { id: 'brownie', name: 'Brownie', emoji: '🍫' },
+  { id: 'brownie', name: 'Desserts', emoji: '🍫' },
   { id: 'choco-dips', name: 'Choco Sauce Dips', emoji: '🍫' },
   { id: 'coolers', name: 'Coolers', emoji: '🧊' },
 ];
@@ -60,17 +60,7 @@ const allMenuItems: MenuItem[] = [
 
   // ─── COFFEE & CO ───────────────────────────────────────────────────
   {
-    id: 'cf-00', category: 'coffee', name: 'Cigarette Espresso', price: 179, veg: true, mustTry: false,
-    description: 'A bold, intense espresso shot served with a smoky finish — our most striking coffee experience.',
-    image: '/coffee/cigarette-espresso.png'
-  },
-  {
-    id: 'cf-13', category: 'coffee', name: 'Affogato', price: 199, veg: true, mustTry: false,
-    description: 'A shot of bold espresso poured over velvety vanilla ice cream — hot meets cold in the most indulgent way.',
-    image: '/coffee/affogato.png'
-  },
-  {
-    id: 'cf-01', category: 'coffee', name: 'Coffee', price: 59, veg: true, mustTry: true,
+    id: 'cf-01', category: 'coffee', name: 'Cappuccino', price: 59, veg: true, mustTry: true,
     description: 'Our signature house coffee — smooth, aromatic, freshly brewed.',
     image: '/coffee/coffee.png'
   },
@@ -128,6 +118,36 @@ const allMenuItems: MenuItem[] = [
     id: 'cf-12', category: 'coffee', name: 'Tiramisu Latte', price: 249, veg: true, mustTry: true,
     description: 'Espresso-soaked ladyfinger flavours swirled into a velvety latte with mascarpone cream and a dusting of cocoa.',
     image: '/coffee/tiramisu-latte.png'
+  },
+  {
+    id: 'cf-00', category: 'coffee', name: 'Cigarette Espresso', price: 179, veg: true, mustTry: false,
+    description: 'A bold, intense espresso shot served with a smoky finish — our most striking coffee experience.',
+    image: '/coffee/cigarette-espresso.png'
+  },
+  {
+    id: 'cf-13', category: 'coffee', name: 'Affogato', price: 199, veg: true, mustTry: false,
+    description: 'A shot of bold espresso poured over velvety vanilla ice cream — hot meets cold in the most indulgent way.',
+    image: '/coffee/affogato.png'
+  },
+  {
+    id: 'cf-14', category: 'coffee', name: 'Biscoff Affogato', price: 249, veg: true, mustTry: false,
+    description: 'A shot of bold espresso poured over velvety vanilla ice cream, crowned with a generous swirl of Biscoff spread — the ultimate indulgence.',
+    image: '/coffee/biscoff_affogato.png'
+  },
+  {
+    id: 'br-06', category: 'brownie', name: 'Choco Lava', price: 149, veg: true, mustTry: false,
+    description: 'A warm, molten chocolate cake with a gooey lava centre that flows with every spoonful — pure indulgence.',
+    image: '/brownie/choco_lava.png'
+  },
+  {
+    id: 'br-07', category: 'brownie', name: 'Choco Lava with Ice Cream', price: 199, veg: true, mustTry: false,
+    description: 'Our warm molten choco lava paired with a scoop of cold vanilla ice cream — the ultimate hot and cold indulgence.',
+    image: '/brownie/choco_lava_icecream.png'
+  },
+  {
+    id: 'br-08', category: 'brownie', name: 'Special Choco Lava', price: 249, veg: true, mustTry: false,
+    description: 'Velvety vanilla ice cream and soft marshmallows crowned with a generous drizzle of rich chocolate sauce — indulgent, dreamy and impossible to resist.',
+    image: '/brownie/special_choco_lava.png'
   },
 
   // ─── SIGNATURE MATCHA ──────────────────────────────────────────────
@@ -509,4 +529,4 @@ export const comboOffers = [
 export const menuItems = allMenuItems.filter(i => !HIDDEN_CATEGORIES.includes(i.category));
 
 // IDs of newly added items — shown in the "Just Dropped" category
-export const newItemIds = new Set(['br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
+export const newItemIds = new Set(['cf-14', 'br-06', 'br-07', 'br-08', 'br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
