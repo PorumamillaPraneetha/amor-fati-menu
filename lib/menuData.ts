@@ -58,9 +58,16 @@ const allMenuItems: MenuItem[] = [
     image: '/french-toasts/mango-french-toast.png'
   },
 
+  // ─── DESSERTS ──────────────────────────────────────────────────────
+  {
+    id: 'br-09', category: 'brownie', name: 'Tiramisu', price: 199, veg: true, mustTry: false,
+    description: 'Classic Italian layers of espresso-soaked ladyfingers and rich mascarpone cream, dusted with cocoa — elegant, indulgent and utterly timeless.',
+    image: '/brownie/tiramisu.png'
+  },
+
   // ─── COFFEE & CO ───────────────────────────────────────────────────
   {
-    id: 'cf-01', category: 'coffee', name: 'Cappuccino', price: 59, veg: true, mustTry: true,
+    id: 'cf-01', category: 'coffee', name: 'Cappuccino', price: 79, veg: true, mustTry: true,
     description: 'Our signature house coffee — smooth, aromatic, freshly brewed.',
     image: '/coffee/coffee.png'
   },
@@ -529,4 +536,4 @@ export const comboOffers = [
 export const menuItems = allMenuItems.filter(i => !HIDDEN_CATEGORIES.includes(i.category));
 
 // IDs of newly added items — shown in the "Just Dropped" category
-export const newItemIds = new Set(['cf-14', 'br-06', 'br-07', 'br-08', 'br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
+export const newItemIds = new Set(['br-09', 'cf-14', 'br-06', 'br-07', 'br-08', 'br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
