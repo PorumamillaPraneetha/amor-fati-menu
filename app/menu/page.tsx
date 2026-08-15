@@ -202,7 +202,7 @@ export default function MenuPage() {
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B45309" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
           </svg>
-          <p className="text-[11px] font-semibold" style={{ color: "#92400E" }}>18% GST applicable on all items</p>
+          <p className="text-[11px] font-semibold" style={{ color: "#92400E" }}>5% GST applicable on all items</p>
         </div>
       </div>
 
