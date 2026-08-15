@@ -278,6 +278,11 @@ const allMenuItems: MenuItem[] = [
     image: '/pizza/golden-delight.png', sub: 'Onion · Corn · Capsicum'
   },
   {
+    id: 'pz-09', category: 'pizza', name: 'Mushroom Pizza', price: 229, veg: true, mustTry: false,
+    description: 'A rich, earthy blend of sautéed mushrooms on a golden crust with melted cheese — simple, satisfying and full of flavour.',
+    image: '/pizza/mushroom_pizza.png'
+  },
+  {
     id: 'pz-04', category: 'pizza', name: 'Chicken Tangy Pizza', price: 249, veg: false, mustTry: false,
     description: 'Tangy pizza with baked chicken, onion and capsicum.',
     image: '/pizza/chicken-tangy-pizza.png', sub: 'Baked Chicken · Onion · Capsicum'
@@ -301,11 +306,6 @@ const allMenuItems: MenuItem[] = [
     id: 'pz-08', category: 'pizza', name: 'Fried Chicken Pizza', price: 349, veg: false, mustTry: false,
     description: 'Best-seller: crispy fried chicken, red paprika and onion.',
     image: '/pizza/fried-chicken-pizza.png', sub: 'Fried Chicken · Red Paprika · Onion'
-  },
-  {
-    id: 'pz-09', category: 'pizza', name: 'Mushroom Pizza', price: 229, veg: true, mustTry: false,
-    description: 'A rich, earthy blend of sautéed mushrooms on a golden crust with melted cheese — simple, satisfying and full of flavour.',
-    image: '/pizza/mushroom_pizza.png'
   },
 
   // ─── BURGERS ───────────────────────────────────────────────────────
