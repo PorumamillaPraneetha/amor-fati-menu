@@ -211,6 +211,11 @@ const allMenuItems: MenuItem[] = [
     image: '/fried/peri-peri-fries.png'
   },
   {
+    id: 'ff-15', category: 'fried', name: 'Veg Fingers', price: 119, veg: true, mustTry: false,
+    description: 'Crispy golden vegetable fingers with a crunchy coating and a soft, flavourful filling — a classic snack done right.',
+    image: '/fried/veg_fingers.png'
+  },
+  {
     id: 'ff-05', category: 'fried', name: 'Chicken Cheese Shots', price: 129, veg: false, mustTry: false,
     description: 'Crispy chicken bites stuffed with gooey melted cheese.',
     image: '/fried/chicken-cheese-shots.png'
