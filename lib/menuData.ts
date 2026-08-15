@@ -302,6 +302,11 @@ const allMenuItems: MenuItem[] = [
     description: 'Best-seller: crispy fried chicken, red paprika and onion.',
     image: '/pizza/fried-chicken-pizza.png', sub: 'Fried Chicken · Red Paprika · Onion'
   },
+  {
+    id: 'pz-09', category: 'pizza', name: 'Mushroom Pizza', price: 229, veg: true, mustTry: false,
+    description: 'A rich, earthy blend of sautéed mushrooms on a golden crust with melted cheese — simple, satisfying and full of flavour.',
+    image: '/pizza/mushroom_pizza.png'
+  },
 
   // ─── BURGERS ───────────────────────────────────────────────────────
   {
@@ -536,4 +541,4 @@ export const comboOffers = [
 export const menuItems = allMenuItems.filter(i => !HIDDEN_CATEGORIES.includes(i.category));
 
 // IDs of newly added items — shown in the "Just Dropped" category
-export const newItemIds = new Set(['br-09', 'cf-14', 'br-06', 'br-07', 'br-08', 'br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
+export const newItemIds = new Set(['br-09', 'cf-14', 'br-06', 'br-07', 'br-08', 'pz-09', 'br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
