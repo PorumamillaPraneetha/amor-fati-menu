@@ -142,6 +142,16 @@ const allMenuItems: MenuItem[] = [
     image: '/coffee/biscoff_affogato.png'
   },
   {
+    id: 'cf-15', category: 'coffee', name: 'Irish Coffee', price: 149, veg: true, mustTry: false,
+    description: 'A warming blend of rich coffee and a hint of Irish spirit, topped with a cloud of cream — bold, smooth and deeply satisfying.',
+    image: '/coffee/irish_coffee.png'
+  },
+  {
+    id: 'cf-16', category: 'coffee', name: 'Iced Irish Coffee', price: 249, veg: true, mustTry: false,
+    description: 'Chilled Irish coffee served over ice with a luscious cream topping — the perfect cool-down with a kick.',
+    image: '/coffee/iced_irish_coffee.png'
+  },
+  {
     id: 'br-06', category: 'brownie', name: 'Choco Lava', price: 149, veg: true, mustTry: false,
     description: 'A warm, molten chocolate cake with a gooey lava centre that flows with every spoonful — pure indulgence.',
     image: '/brownie/choco_lava.png'
@@ -546,4 +556,4 @@ export const comboOffers = [
 export const menuItems = allMenuItems.filter(i => !HIDDEN_CATEGORIES.includes(i.category));
 
 // IDs of newly added items — shown in the "Just Dropped" category
-export const newItemIds = new Set(['br-09', 'cf-14', 'br-06', 'br-07', 'br-08', 'pz-09', 'br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
+export const newItemIds = new Set(['br-09', 'cf-14', 'cf-15', 'cf-16', 'br-06', 'br-07', 'br-08', 'pz-09', 'br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
