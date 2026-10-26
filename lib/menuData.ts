@@ -32,6 +32,7 @@ export type MenuItem = {
   description: string;
   image: string;
   sub?: string;
+  preBooking?: boolean;
 };
 
 const allMenuItems: MenuItem[] = [
@@ -165,6 +166,11 @@ const allMenuItems: MenuItem[] = [
     id: 'br-08', category: 'brownie', name: 'Special Choco Lava', price: 249, veg: true, mustTry: false,
     description: 'Velvety vanilla ice cream and soft marshmallows crowned with a generous drizzle of rich chocolate sauce — indulgent, dreamy and impossible to resist.',
     image: '/brownie/special_choco_lava.png'
+  },
+  {
+    id: 'br-10', category: 'brownie', name: 'Hazelnut Double Chocolate Lava', price: 149, veg: true, mustTry: false,
+    description: 'A fudgy double chocolate lava dessert drizzled with silky chocolate and hazelnut spread, topped with crunchy roasted hazelnuts.',
+    image: '/brownie/hazelnut_double_chocolate_lava.png'
   },
 
   // ─── SIGNATURE MATCHA ──────────────────────────────────────────────
@@ -348,6 +354,16 @@ const allMenuItems: MenuItem[] = [
     id: 'bg-05', category: 'burgers', name: 'Egg Burger', price: 129, veg: true, mustTry: false,
     description: 'Fluffy fried egg with melted cheese, fresh lettuce and house sauce in a toasted brioche bun.',
     image: '/burgers/egg-burger.png'
+  },
+  {
+    id: 'bg-06', category: 'burgers', name: 'Nashville Burger', price: 299, veg: false, mustTry: false,
+    description: 'Crispy Nashville-style hot chicken with a fiery spice kick, tangy pickles and creamy sauce in a toasted bun.',
+    image: '/burgers/nashville_burger.png', preBooking: true
+  },
+  {
+    id: 'bg-07', category: 'burgers', name: 'Super Cheese Burger', price: 329, veg: false, mustTry: false,
+    description: 'Juicy loaded sliders drowned in a creamy cheese sauce, served with seasoned fries on the side.',
+    image: '/burgers/super_cheese_burger.png', preBooking: true
   },
 
   // ─── SMASH BURGERS (sub-category under Burgers) ────────────────────
@@ -556,4 +572,4 @@ export const comboOffers = [
 export const menuItems = allMenuItems.filter(i => !HIDDEN_CATEGORIES.includes(i.category));
 
 // IDs of newly added items — shown in the "Just Dropped" category
-export const newItemIds = new Set(['br-09', 'cf-14', 'cf-15', 'cf-16', 'br-06', 'br-07', 'br-08', 'pz-09', 'br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);
+export const newItemIds = new Set(['bg-06', 'bg-07', 'br-10', 'br-09', 'cf-14', 'cf-15', 'cf-16', 'br-06', 'br-07', 'br-08', 'pz-09', 'br-00', 'cf-00', 'cl-05', 'wr-06', 'cf-13']);

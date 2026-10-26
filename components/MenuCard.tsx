@@ -141,6 +141,13 @@ export default function MenuCard({ item, forceStandard = false, soldOut = false 
           <p className="text-[10px] text-purple-400 truncate">{item.sub}</p>
         )}
 
+        {/* Pre-booking */}
+        {item.preBooking && (
+          <p className="text-[10px] font-semibold text-purple-600 bg-purple-50 rounded-full px-2 py-0.5 self-start">
+            📅 Pre-booking available
+          </p>
+        )}
+
         {/* Price row */}
         <div className="flex items-center justify-between mt-1.5">
           <span
