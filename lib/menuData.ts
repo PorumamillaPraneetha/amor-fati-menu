@@ -355,16 +355,6 @@ const allMenuItems: MenuItem[] = [
     description: 'Fluffy fried egg with melted cheese, fresh lettuce and house sauce in a toasted brioche bun.',
     image: '/burgers/egg-burger.png'
   },
-  {
-    id: 'bg-06', category: 'burgers', name: 'Nashville Burger', price: 299, veg: false, mustTry: false,
-    description: 'Crispy Nashville-style hot chicken with a fiery spice kick, tangy pickles and creamy sauce in a toasted bun.',
-    image: '/burgers/nashville_burger.png', preBooking: true
-  },
-  {
-    id: 'bg-07', category: 'burgers', name: 'Super Cheese Burger', price: 329, veg: false, mustTry: false,
-    description: 'Juicy loaded sliders drowned in a creamy cheese sauce, served with seasoned fries on the side.',
-    image: '/burgers/super_cheese_burger.png', preBooking: true
-  },
 
   // ─── SMASH BURGERS (sub-category under Burgers) ────────────────────
   {
@@ -376,6 +366,16 @@ const allMenuItems: MenuItem[] = [
     id: 'sb-02', category: 'burgers', name: 'Double Patty Burger', price: 229, veg: false, mustTry: false,
     description: 'Two smashed patties, double cheese, double the flavour.',
     image: '/burgers/double-patty-burger.png', sub: 'Smash Burger'
+  },
+  {
+    id: 'bg-06', category: 'burgers', name: 'Nashville Burger', price: 299, veg: false, mustTry: false,
+    description: 'Crispy Nashville-style hot chicken with a fiery spice kick, tangy pickles and creamy sauce in a toasted bun.',
+    image: '/burgers/nashville_burger.png', preBooking: true
+  },
+  {
+    id: 'bg-07', category: 'burgers', name: 'Super Cheese Burger', price: 329, veg: false, mustTry: false,
+    description: 'Juicy loaded sliders drowned in a creamy cheese sauce, served with seasoned fries on the side.',
+    image: '/burgers/super_cheese_burger.png', preBooking: true
   },
 
   // ─── WRAPS ─────────────────────────────────────────────────────────
