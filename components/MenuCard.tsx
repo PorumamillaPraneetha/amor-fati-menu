@@ -3,6 +3,8 @@
 import { useState } from "react";
 import type { MenuItem } from "@/lib/menuData";
 
+const PRE_BOOKING_URL = "https://amor-website-nine.vercel.app";
+
 const CATEGORY_FALLBACKS: Record<string, string> = {
   'french-toasts': "🍞",
   coffee:  "☕",
@@ -143,9 +145,14 @@ export default function MenuCard({ item, forceStandard = false, soldOut = false 
 
         {/* Pre-booking */}
         {item.preBooking && (
-          <p className="text-[10px] font-semibold text-purple-600 bg-purple-50 rounded-full px-2 py-0.5 self-start">
+          <a
+            href={PRE_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 rounded-full px-2 py-0.5 self-start"
+          >
             📅 Pre-booking available
-          </p>
+          </a>
         )}
 
         {/* Price row */}
