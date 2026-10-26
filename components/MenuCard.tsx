@@ -151,7 +151,7 @@ export default function MenuCard({ item, forceStandard = false, soldOut = false 
             rel="noopener noreferrer"
             className="text-[10px] font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 rounded-full px-2 py-0.5 self-start"
           >
-            📅 Pre-booking available
+            📅 Pre-bookings only
           </a>
         )}
 

@@ -350,11 +350,6 @@ const allMenuItems: MenuItem[] = [
     description: 'Crispy fried chicken fillet with fresh slaw and house sauce.',
     image: '/burgers/fried-chicken-burger.png'
   },
-  {
-    id: 'bg-05', category: 'burgers', name: 'Egg Burger', price: 129, veg: true, mustTry: false,
-    description: 'Fluffy fried egg with melted cheese, fresh lettuce and house sauce in a toasted brioche bun.',
-    image: '/burgers/egg-burger.png'
-  },
 
   // ─── SMASH BURGERS (sub-category under Burgers) ────────────────────
   {
