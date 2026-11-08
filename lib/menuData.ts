@@ -168,7 +168,7 @@ const allMenuItems: MenuItem[] = [
     image: '/brownie/special_choco_lava.png'
   },
   {
-    id: 'br-10', category: 'brownie', name: 'Hazelnut Double Chocolate Lava', price: 149, veg: true, mustTry: false,
+    id: 'br-10', category: 'brownie', name: 'Hazelnut Double Chocolate Lava', price: 199, veg: true, mustTry: false,
     description: 'A fudgy double chocolate lava dessert drizzled with silky chocolate and hazelnut spread, topped with crunchy roasted hazelnuts.',
     image: '/brownie/hazelnut_double_chocolate_lava.png'
   },
